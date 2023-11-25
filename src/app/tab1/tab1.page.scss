@@ -1,0 +1,27 @@
+
+/*MAIN*/
+
+#img-golden{
+    width: 500px;
+    height: 400px;
+}
+#boton-agendar{
+    background: #49A89A;
+    width: 200px;
+    height: 70px;
+    font-size: 35px;
+    margin-top: 7%;
+}
+.advice{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #204B5E;
+    margin-left: 10%;
+    width: 500px;
+    height: 400px;
+    h4{
+        font-size: 26px;
+    }
+}
