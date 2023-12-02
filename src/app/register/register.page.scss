@@ -1,0 +1,36 @@
+h1{
+    color: #BAAB6A;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;  
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #204B5E;
+    color: #BAAB6A;
+    width:25vw;
+    height:40vh;
+}  
+
+input{
+    margin-bottom:4%;
+    background: lightgray;
+    width: 70%;
+}
+
+button{
+    width: 70%;
+    height: 5vh;
+    margin-bottom:10%;
+    color: #FDFAC7;
+    margin: 20px;
+    background: #49A89A;   
+    font-size: 20px;
+}

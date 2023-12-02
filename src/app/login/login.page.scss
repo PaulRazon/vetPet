@@ -1,0 +1,39 @@
+h1{
+    color: #BAAB6A;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;  
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #204B5E;
+    color: #BAAB6A;
+    width:25vw;
+    height:55vh;
+}  
+
+input{
+    margin-bottom:4%;
+    background: lightgray;
+    width: 70%;
+}
+
+button{
+    width: 70%;
+    height: 5vh;
+    margin-bottom:5%;
+    color: #FDFAC7;
+    background: #49A89A;   
+    font-size: 20px;
+}
+
+.register{
+    margin-bottom: 10%;
+}
