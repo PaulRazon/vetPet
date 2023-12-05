@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: "AIzaSyBCRuAEXLBnSR14Oz5N0ZsVtiAiEr39ERk",
-    authDomain: "vetpet-ac940.firebaseapp.com",
-    projectId: "vetpet-ac940",
-    storageBucket: "vetpet-ac940.appspot.com",
-    messagingSenderId: "970317779493",
-    appId: "1:970317779493:web:8082df83afc45add9425cc"
+    apiKey: "AIzaSyAqMFdbyBL56X3vkw5Rtd2PVC98-eLEXyo",
+    authDomain: "vet-pet-pruebas.firebaseapp.com",
+    projectId: "vet-pet-pruebas",
+    storageBucket: "vet-pet-pruebas.appspot.com",
+    messagingSenderId: "829860947094",
+    appId: "1:829860947094:web:02a9181ae13ba7ad380eb7"
   }
 };
 
