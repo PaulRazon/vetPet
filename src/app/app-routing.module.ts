@@ -16,6 +16,10 @@ const routes: Routes = [
   {
     path: 'ver-citas',
     loadChildren: () => import('./ver-citas/ver-citas.module').then( m => m.VerCitasPageModule)
+  },
+  {
+    path: 'add-product',
+    loadChildren: () => import('./add-product/add-product.module').then( m => m.AddProductPageModule)
   }
 
 ];
