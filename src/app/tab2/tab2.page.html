@@ -1,19 +1,96 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="mycolor">
-    <div class="header">
-      <img id="img-logo" src="../../assets/img/logo_patitas.png" alt="logo">
-      <div class="usuario">
-        <p>Usuario</p>
-        <img src="" alt="imagen usuario" srcset="">
-        <a href="">Cerrar sesión</a>
-      </div>
-    </div>
+    <app-toolbar></app-toolbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div class="main">
-
+    <div class="citas">
+      <h1>Agendar una cita</h1>
+      <div class="formulario">
+        <table>
+          <tr>
+            <td>Nombre del paciente</td>
+            <td>Propietario</td>
+          </tr>
+          <tr>
+            <td><input type="text" class="nombre" /></td>
+            <td><input type="text" class="propietario" /></td>
+          </tr>
+          <tr>
+            <td>Fecha</td>
+            <td>Hora</td>
+          </tr>
+          <tr>
+            <td><input type="date" /></td>
+            <td><input type="time" /></td>
+          </tr>
+        </table>
+        <h2>Tipo de servicio</h2>
+        <select name="" id="">
+          <option value="">Corte de pelo</option>
+          <option value="">Baño</option>
+          <option value="">Consulta</option>
+        </select>
+        <h2>Observaciones</h2>
+        <input type="text" class="observaciones" />
+        <button type="button" id="boton-agendar">Agendar</button>
+      </div>
+    </div>
+    <div class="citas_b">
+      <h1>Visualizar citas anteriores</h1>
+      <div class="registro">
+        <table class="historial">
+          <tr>
+            <td>Nombre del paciente</td>
+            <td>Fecha</td>
+            <td>Hora</td>
+          </tr>
+          <hr>
+          <tr class="tarjeta">
+            <td>Perrito</td>
+            <td>01-01-2022</td>
+            <td>10:00</td>
+          </tr>
+          <hr>
+          <tr class="tarjeta">
+            <td>Perrito</td>
+            <td>01-01-2022</td>
+            <td>10:00</td>
+          </tr>
+          <hr>
+          <tr class="tarjeta">
+            <td>Perrito</td>
+            <td>01-01-2022</td>
+            <td>10:00</td>
+          </tr>
+          <hr>
+          <tr class="tarjeta">
+            <td>Perrito</td>
+            <td>01-01-2022</td>
+            <td>10:00</td>
+          </tr>
+          <hr>
+          <tr class="tarjeta">
+            <td>Perrito</td>
+            <td>01-01-2022</td>
+            <td>10:00</td>
+          </tr>
+          <hr>
+          <tr class="tarjeta">
+            <td>Perrito</td>
+            <td>01-01-2022</td>
+            <td>10:00</td>
+          </tr>
+          <hr>
+          <tr class="tarjeta">
+            <td>Perrito</td>
+            <td>01-01-2022</td>
+            <td>10:00</td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
-
 </ion-content>

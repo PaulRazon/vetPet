@@ -1,20 +1,47 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="mycolor">
-    <div class="header">
-      <img id="img-logo" src="../../assets/img/logo_patitas.png" alt="logo">
-      <div class="usuario">
-        <p>Usuario</p>
-        <img src="" alt="imagen usuario" srcset="">
-        <a href="">Cerrar sesión</a>
-      </div>
-    </div>
+    <app-toolbar></app-toolbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <div class="main">
-
+  
+  <div class="main">
+    <h1>Nos puedes encontrar en...</h1>
+    <div class="mapa">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3713.3995804606575!2d-104.89582792412718!3d21.45283267307704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8427312773ccc943%3A0x1f2d7bc81174d79!2sIndependencia%2029%2C%20Landare%C3%B1as%2C%2063784%20Xalisco%2C%20Nay.!5e0!3m2!1ses-419!2smx!4v1700934153668!5m2!1ses-419!2smx"
+        width="700"
+        height="350"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
     </div>
-
-
+    <div class="contactos">
+      <table>
+        <tr>
+          <td>
+            <div class="contacto">
+              <img src="../../assets/img/whatsapp.png" alt="" />
+              <h2>311-204-6937</h2>
+            </div>
+          </td>
+          <td>
+            <div class="contacto">
+              <img src="../../assets/img/gmail.png" alt="" />
+              <h2>brparazon&commat;ittepic.edu.mx</h2>
+            </div>
+          </td>
+          <td>
+            <div class="contacto">
+              <img src="../../assets/img/instagram.png" alt="" />
+              <h2>paul_razon12</h2>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </ion-content>

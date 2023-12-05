@@ -1,13 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="mycolor">
-    <div class="header">
-      <img id="img-logo" src="../../assets/img/logo_patitas.png" alt="logo">
-      <div class="usuario">
-        <p>Usuario</p>
-        <img src="" alt="imagen usuario" srcset="">
-        <a href="">Cerrar sesión</a>
-      </div>
-    </div>
+    <app-toolbar></app-toolbar>
   </ion-toolbar>
 </ion-header>
 
@@ -16,7 +9,7 @@
     <img id="img-golden" src="../../assets/img/golden-perro.jpg" alt="golden" srcset="">
     <div class="advice">
       <h4>AGENDA TU CITA PARA TU MASCOTA</h4>
-      <button type="button" id="boton-agendar">Agendar</button>
+      <button type="button" id="boton-agendar" (click)="navigateToRegister()">Agendar</button>
     </div>
   </div>
 </ion-content>

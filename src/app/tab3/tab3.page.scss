@@ -1,0 +1,33 @@
+
+h1{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #204B5E;
+    width: 500px;
+    height: 40px;
+    text-align:center;
+    color: #FDFAC7;
+}
+.mapa{
+    margin-top: 80px;
+    border: 20px solid #204B5E;
+    margin-bottom: 10px;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto{
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+}
+h2{
+    margin-left: 10px;
+    background: #204B5E;
+    color:#FDFAC7;
+}

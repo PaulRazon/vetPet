@@ -10,7 +10,7 @@
     align-items: center;
     text-align: center;
     background: #204B5E;
-    width: 500px;
+    width: 900px;
     height: 500px;
 }
 
@@ -20,8 +20,8 @@
     align-items: center;
     text-align: center;
     background: #204B5E;
-    width: 500px;
-    height: 500px;
+    width: 800px;
+    height: 600px;
 }
 
 td{
@@ -53,6 +53,20 @@ button{
     width: 50%;
     height: 40px;
     font-size: 20px;
+}
+
+.atendida {
+    background:#3498db;
+}
+
+.cancelar {
+    background: #d35400;
+  }
+
+
+.atendida, .cancelar {
+    width: 80px;
+    display: inline-block; 
 }
 
 .nombre{

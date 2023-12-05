@@ -1,0 +1,31 @@
+$base-color:#204B5E;
+$secondary-color: #BAAB6A;
+h3 {
+    color: $secondary-color;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .categoria {
+    width: 460px;
+    height: 275px; 
+    border: 1px solid $secondary-color;
+    margin: 15px;
+    background-color: $base-color;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+  }
+
+  .categoria img {
+    width: 50%;
+  }
