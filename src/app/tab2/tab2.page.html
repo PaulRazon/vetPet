@@ -8,37 +8,37 @@
   <div class="main">
     <div class="citas">
       <h1>Agendar una cita</h1>
-      <div class="formulario">
+      <form class="formulario" [formGroup]="citaForm">
         <table>
           <tr>
             <td>Nombre del paciente</td>
             <td>Propietario</td>
           </tr>
           <tr>
-            <td><input type="text" class="nombre" /></td>
-            <td><input type="text" class="propietario" /></td>
+            <td><input type="text" class="nombre"   formControlName="name"/></td>
+            <td><input type="text" class="propietario"   formControlName="propietario"/></td>
           </tr>
           <tr>
             <td>Fecha</td>
             <td>Hora</td>
           </tr>
           <tr>
-            <td><input type="date" /></td>
-            <td><input type="time" /></td>
+            <td><input type="date"  formControlName="fecha"/></td>
+            <td><input type="time"  formControlName="hora"/></td>
           </tr>
         </table>
         <h2>Tipo de servicio</h2>
-        <select name="" id="">
-          <option value="">Corte de pelo</option>
-          <option value="">Baño</option>
-          <option value="">Consulta</option>
+        <select name="" id=""  formControlName="tipo">
+          <option value="Corte de Pelo">Corte de pelo</option>
+          <option value="Baño">Baño</option>
+          <option value="Consulta">Consulta</option>
         </select>
         <h2>Observaciones</h2>
-        <input type="text" class="observaciones" />
-        <button type="button" id="boton-agendar">Agendar</button>
-      </div>
+        <input type="text" class="observaciones"  formControlName="observaciones"/>
+        <button type="submit" id="boton-agendar" (click)="addCita()">Agendar</button>
+      </form>
     </div>
-    <div class="citas_b">
+    <div class="citas_b" >
       <h1>Visualizar citas anteriores</h1>
       <div class="registro">
         <table class="historial">
@@ -48,47 +48,13 @@
             <td>Hora</td>
           </tr>
           <hr>
-          <tr class="tarjeta">
-            <td>Perrito</td>
-            <td>01-01-2022</td>
-            <td>10:00</td>
+          <tr class="tarjeta" *ngFor="let cita of citas">
+            <td>{{cita.name}}</td>
+            <td>{{cita.fecha}}</td>
+            <td>{{cita.hora}}</td>
           </tr>
           <hr>
-          <tr class="tarjeta">
-            <td>Perrito</td>
-            <td>01-01-2022</td>
-            <td>10:00</td>
-          </tr>
-          <hr>
-          <tr class="tarjeta">
-            <td>Perrito</td>
-            <td>01-01-2022</td>
-            <td>10:00</td>
-          </tr>
-          <hr>
-          <tr class="tarjeta">
-            <td>Perrito</td>
-            <td>01-01-2022</td>
-            <td>10:00</td>
-          </tr>
-          <hr>
-          <tr class="tarjeta">
-            <td>Perrito</td>
-            <td>01-01-2022</td>
-            <td>10:00</td>
-          </tr>
-          <hr>
-          <tr class="tarjeta">
-            <td>Perrito</td>
-            <td>01-01-2022</td>
-            <td>10:00</td>
-          </tr>
-          <hr>
-          <tr class="tarjeta">
-            <td>Perrito</td>
-            <td>01-01-2022</td>
-            <td>10:00</td>
-          </tr>
+          
         </table>
       </div>
     </div>
