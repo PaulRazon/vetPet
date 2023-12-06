@@ -29,3 +29,11 @@ h3 {
   .categoria img {
     width: 50%;
   }
+
+  .custom-select {
+    --background: #204B5E; /* Color de fondo */
+    --border-color: #49A89A; /* Color del borde */
+    --placeholder-color: #FDFAC7; /* Color del texto de marcador de posición */
+    --color: #FDFAC7; /* Color del texto seleccionado */
+    --icon-color: #FDFAC7; /* Color del icono */
+  }
