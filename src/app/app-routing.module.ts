@@ -14,8 +14,17 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
   {
+<<<<<<< HEAD
     path: 'reset-password',
     loadChildren: () => import('./reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
+=======
+    path: 'ver-citas',
+    loadChildren: () => import('./ver-citas/ver-citas.module').then( m => m.VerCitasPageModule)
+  },
+  {
+    path: 'add-product',
+    loadChildren: () => import('./add-product/add-product.module').then( m => m.AddProductPageModule)
+>>>>>>> r-valeria
   }
 
 ];
