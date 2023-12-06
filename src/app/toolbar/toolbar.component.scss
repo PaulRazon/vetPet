@@ -2,12 +2,27 @@ img{
     height: 50px;
     width: 50px;
     border-radius: 30%;
+    margin-right: 3%;
+}
+label{
+    margin-right: 3%;
 }
 
 button{
     width: 15vh;
-    height: 6vh;
+    height: 4vh;
     border-radius: 5px;
     background-color:#204B5E;
     color: #FDFAC7;
+}
+
+.usuario{
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+    justify-content: right;
+}
+
+.boton{
+    margin-right: 3%;
 }

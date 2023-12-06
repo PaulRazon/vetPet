@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-tab2',
@@ -9,15 +8,8 @@ import { Router } from '@angular/router';
 })
 export class Tab2Page {
 
-  constructor(private autSercice: AuthService, private router: Router) {}
+  constructor() {}
 
   ngOnInit() {
-    this.autSercice.getUserLogin().subscribe((res) => {
-      if (res) {
-        this.router.navigate(['tabs/tab2']);
-      }else{
-        this.router.navigate(['login']);
-      }
-    })
   }
 }

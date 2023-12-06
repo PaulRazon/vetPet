@@ -40,9 +40,13 @@ export class AuthService {
   getUserLogin(){
     return this.afAuth.authState
   }
-
+  
   logout(){
     this.afAuth.signOut();
+  }
+
+  resetPassword(email: string){
+    return this.afAuth.sendPasswordResetEmail(email)
   }
   
 }
