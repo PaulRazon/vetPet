@@ -20,7 +20,7 @@ export class ToolbarComponent  implements OnInit {
   ngOnInit() {}
 
   logout(){
-    this.autSercice.logout();
+    this.autSercice.logout()
   }
 
   navigateToLogin(){
