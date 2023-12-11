@@ -5,58 +5,39 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-fab-button  slot="fixed" (click)="openProductAddPage()">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
   <div class="main">
-    <ion-grid>
-      <ion-row>
-        <ion-col size="12">
-          <ion-select label="Tipo" 
-          [multiple]="true"
-          interface="popover"
-          label-placement="floating"
-          [(ngModel)]="filter"
-          (ionChange)="filterProducts()"
-          class="custom-select"
-          >
-          <ion-select-option value="Juguetes y Accesorios">
-            Juguetes y Accesorios
-          </ion-select-option>
-          <ion-select-option value="Ropa">
-            Ropa
-          </ion-select-option>
-          <ion-select-option value="Limpieza">
-            Limpieza
-          </ion-select-option>
-          <ion-select-option value="Alimento">
-            Alimento
-          </ion-select-option>
-          </ion-select>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col size="6" *ngFor="let product of productsFounds; index as i">
-          <ion-card>
-            <img [src]="product.photo+i"/>
-            <ion-card-header>
-              <ion-card-title>
-                {{product.name}}
-                <ion-badge [color]="getColor(product.type)">{{product.type}}</ion-badge>
-              </ion-card-title>
-              <ion-card-subtitle>{{ product.price| currency }}</ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-              {{product.description}}
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-
-    
-
+    <div class="filter">
+      <ion-select label="Tipo" 
+                [multiple]="true"
+                interface="popover"
+                label-placement="floating"
+                [(ngModel)]="filter"
+                (ionChange)="filterProducts()"
+                class = "custom-select"
+    >
+      <ion-select-option value="Juguetes y accesorios">Juguetes y accesorios</ion-select-option>
+      <ion-select-option value="Ropa">Ropa</ion-select-option>
+      <ion-select-option value="Limpieza">Limpieza</ion-select-option>
+      <ion-select-option value="Alimento">Alimento</ion-select-option>
+    </ion-select>
+    </div>
+    <div class="maincontainer">
+      <ng-container *ngFor="let index of [1, 2, 3, 4, 5, 6, 7, 8]">
+        <div class="thecard">
+          <div class="thefront">
+            <h1>Titulo del producto</h1>
+            <img src="https://picsum.photos/200/300" alt="golden" srcset="">
+          </div>
+          <div class="theback">
+            <h1>Back of Card</h1>
+            <p>Caracteristicas</p>
+            <ion-button expand="block">
+              <ion-icon name="cart-outline" ></ion-icon>
+            </ion-button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
   </div>
 </ion-content>
 
