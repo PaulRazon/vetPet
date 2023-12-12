@@ -10,8 +10,7 @@ import { Router } from '@angular/router';
 export class RegisterPage implements OnInit {
   usuario = {
     email: '',
-    password: '',
-    displayName:''
+    password: ''
   }
   constructor(private autSercice: AuthService, private router: Router) { }
 
@@ -20,7 +19,7 @@ export class RegisterPage implements OnInit {
 
   register(){
     console.log(this.usuario);
-    const {email, password ,displayName} = this.usuario;
+    const {email, password ,} = this.usuario;
     this.autSercice.register(email,password,).then(res =>{
       console.log("Usuario registrado: ",res);
     })

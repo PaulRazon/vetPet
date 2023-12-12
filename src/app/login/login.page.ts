@@ -64,4 +64,8 @@ export class LoginPage implements OnInit {
   navigateToTabs() {
     this.router.navigate(['/tabs']);
   }
+
+  passwordReset(email: string) {
+    this.autSercice.resetPassword(email);
+  }
 }
