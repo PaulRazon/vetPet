@@ -13,9 +13,11 @@
 
   <ion-card-content>
     <div class="main">
-      <h2 class="header-text">Agregar Producto</h2>
+
+      <h2 class="header-text">Actualizar Producto</h2>
+      
       <div class="login">
-        <form [formGroup]="productForm" (ngSubmit)="saveProduct()">
+        <form [formGroup]="updateForm" (ngSubmit)="updateProduct()">
           <ion-label position="floating">Nombre</ion-label>
           <ion-input type="text" formControlName="name"></ion-input>
 
@@ -42,7 +44,7 @@
             class="button-update"
             expand="block"
             type="submit"
-            [disabled]="!productForm.valid"
+            [disabled]="!updateForm.valid"
             color="orange"
           >
             Guardar
@@ -50,5 +52,6 @@
         </form>
       </div>
     </div>
+    
   </ion-card-content>
 </ion-content>

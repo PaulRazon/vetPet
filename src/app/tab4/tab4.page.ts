@@ -70,5 +70,50 @@ export class Tab4Page {
     return color;
   }
 
+  async mostrarConfirmacion(name:string) {
+
+    this.productService.pos = this.products.findIndex(item => item.name == name);
+    this.productService.productwhere = this.products[this.productService.pos];
+    this.productService.productCollection.snapshotChanges().subscribe((data) => {
+      this.productService.productwhere.id = data[this.productService.pos].payload.doc.id;
+    });
+
+  const alert = await this.alertController.create({
+    header: 'Alerta',
+    message: '¿Quieres eliminar el producto seleccionado?',
+    buttons: [
+      {
+        text: 'No',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: (blah) => {
+          console.log('Acción cancelada');
+        }
+      }, {
+        text: 'Sí',
+        handler: () => {
+          this.productService.deleteProduct(this.productService.productwhere);
+        }
+      }
+    ]
+  });
+
+  await alert.present();
+}
+
+openProductUpdatePage(name:string) {
+  this.productService.pos = this.products.findIndex(item => item.name == name);
+  this.productService.productwhere = this.products[this.productService.pos];
+  this.productService.productCollection.snapshotChanges().subscribe((data) => {
+    this.productService.productwhere.id = data[this.productService.pos].payload.doc.id;
+  });
+  console.log(this.productService.productwhere);
+  
+  
+  this.router.navigate(['/update-product']);
+  
+}
+
+
 
 }

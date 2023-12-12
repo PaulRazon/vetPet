@@ -4,36 +4,60 @@ h3 {
     color: $secondary-color;
 }
 .main {
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     height: 100%;
   }
   
-  .categoria {
-    width: 460px;
-    height: 275px; 
-    border: 1px solid $secondary-color;
-    margin: 15px;
-    background-color: $base-color;
-  }
-
-  .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
-  }
-
-  .categoria img {
-    width: 50%;
-  }
-
   .custom-select {
-    --background: #204B5E; /* Color de fondo */
-    --border-color: #49A89A; /* Color del borde */
+    background: #204B5E; /* Color de fondo */
+    border-color: #49A89A; /* Color del borde */
     --placeholder-color: #FDFAC7; /* Color del texto de marcador de posición */
-    --color: #FDFAC7; /* Color del texto seleccionado */
+    color: #FDFAC7; /* Color del texto seleccionado */
     --icon-color: #FDFAC7; /* Color del icono */
   }
+
+
+  ion-card {
+    max-width: 400px; /* Ajusta el ancho máximo de las tarjetas */
+    margin: 15px; /* Agrega un margen entre las tarjetas */
+    color: white;
+  }
+ 
+  ion-card-content {
+    max-height: 100px; /* Ajusta la altura máxima del contenido de la tarjeta */
+    overflow: hidden; /* Oculta el contenido que supera la altura máxima */
+    max-width: 100%;
+  }
+  
+  ion-card img {
+    height: 200px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+  }
+
+
+  ion-buttons {
+    margin-top: 10px; /* Agrega espacio entre los botones y el contenido de la tarjeta */
+  }
+  
+  ion-button {
+    margin: 5px; /* Agrega un pequeño margen a cada botón */
+  }
+
+  ion-content {
+    --ion-background-color: #204B5E;
+    border-color: #49A89A; /* Color del borde */
+    color: white;
+  }
+
+  ion-fab-button {
+    --background: #204B5E;
+    --border-radius: 15px;
+    --box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    --color: white;
+  }
+

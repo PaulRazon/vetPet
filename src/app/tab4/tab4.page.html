@@ -5,20 +5,24 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-fab-button  slot="fixed" (click)="openProductAddPage()">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+    <ion-fab-button (click)="openProductAddPage()" >
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
+  </ion-fab>
   <div class="main">
     <ion-grid>
       <ion-row>
         <ion-col size="12">
-          <ion-select label="Tipo" 
+          <ion-select 
+          fill="outline"
+          class="custom-select"
+          label="Tipo" 
           [multiple]="true"
           interface="popover"
           label-placement="floating"
           [(ngModel)]="filter"
           (ionChange)="filterProducts()"
-          class="custom-select"
           >
           <ion-select-option value="Juguetes y Accesorios">
             Juguetes y Accesorios
@@ -37,8 +41,8 @@
       </ion-row>
 
       <ion-row>
-        <ion-col size="6" *ngFor="let product of productsFounds; index as i">
-          <ion-card>
+        <ion-col size="3" *ngFor="let product of productsFounds; index as i">
+          <ion-card class="tarjeta">
             <img [src]="product.photo+i"/>
             <ion-card-header>
               <ion-card-title>
@@ -50,13 +54,20 @@
             <ion-card-content>
               {{product.description}}
             </ion-card-content>
+            <ion-buttons class="ion-justify-content-between">
+              <ion-button expand="block"color="warning" (click)="openProductUpdatePage(product.name)">
+                <ion-icon size="large" name="pencil"></ion-icon>
+              </ion-button>
+              <ion-button expand="block"color="danger" (click)="mostrarConfirmacion(product.name)">
+                <ion-icon size="large" name="trash-outline"></ion-icon>
+              </ion-button>
+              
+            </ion-buttons>
+          
           </ion-card>
         </ion-col>
       </ion-row>
     </ion-grid>
-
-    
-
   </div>
 </ion-content>
 
