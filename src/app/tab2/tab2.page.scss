@@ -4,87 +4,84 @@
     color: #FDFAC7;
     
 }
+
 .citas{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     background: #204B5E;
-    width: 500px;
-    height: 500px;
+    width: 60vh;
+    height: 75vh;
 }
-
+.formulario{
+    border: solid 0.3vh #49A89A;
+    margin: 1vh;
+    width: 90%;
+    height: 90%;
+    margin-bottom: 5%;
+}
 .citas_b{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     background: #204B5E;
-    width: 500px;
-    height: 500px;
+    width: 60vh;
+    height: 75vh;
 }
-
+.registro{
+    border: solid 0.3vh #49A89A;
+    margin: 1vh;
+    width: 90%;
+    height: 90%;
+    margin-bottom: 5%;
+}
 td{
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
+    padding-left: 3vh;
+    padding-right: 2vh;
+    padding-top: 2vh;
 }
 
 input{
-    background: lightgray;
+    background: #204B5E;
 }
 
 select{
     width: 40%;
-    border-bottom:solid 5px #BAAB6A;
+    border-bottom:solid 0.5vh #BAAB6A;
     background: #204B5E;
 }
 
 .observaciones{
     width:70%;
-    border-bottom:solid 5px #BAAB6A;
+    border-bottom:solid 0.5vh #BAAB6A;
     background: #204B5E;
 }
 
 button{
     color: #FDFAC7;
-    margin: 20px;
+    margin: 2vh;
     background: #49A89A;
-    width: 50%;
-    height: 40px;
-    font-size: 20px;
+    width: 20vh;
+    height: 5vh;
+    font-size: 100%;
 }
 
 .nombre{
-    width: 150px;
-    border-bottom:solid 5px #BAAB6A;
+    width: 20vh;
+    border-bottom:solid 0.5vh #BAAB6A;
     background: #204B5E;
 }
 
 .propietario{
-    width: 150px;
-    border-bottom:solid 5px #BAAB6A;
+    width: 20vh;
+    border-bottom:solid 0.5vh #BAAB6A;
     background: #204B5E;
 }   
 
-.formulario{
-    border: solid 1px #49A89A;
-    margin: 10px;
-    height: 90%;
-    margin-bottom: 30px;
-}
-
-.registro{
-    border: solid 1px #49A89A;
-    margin: 10px;
-    width: 90%;
-    height: 90%;
-    margin-bottom: 30px;
-}
-
 .tarjeta{
-    border: solid 1px #49A89A;
-    margin-top: 10px;
+    border: solid 0.3vh #49A89A;
 }
 
 .historial{

@@ -42,7 +42,9 @@ export class AuthService {
   }
   
   logout(){
-    this.afAuth.signOut();
+    this.afAuth.signOut().then(() =>{
+      this.router.navigate(['/tabs']);
+    })
   }
 
   resetPassword(email: string){

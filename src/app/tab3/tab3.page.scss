@@ -5,15 +5,15 @@ h1{
     left: 50%;
     transform: translate(-50%, -50%);
     background: #204B5E;
-    width: 500px;
-    height: 40px;
+    width: 55vh;
+    height: 4vh;
     text-align:center;
     color: #FDFAC7;
 }
 .mapa{
-    margin-top: 80px;
-    border: 20px solid #204B5E;
-    margin-bottom: 10px;
+    margin-top: 2%;
+    border: 3vh solid #204B5E;
+    margin-bottom: 2%;
 }
 
 .main{
@@ -24,10 +24,15 @@ h1{
 .contacto{
     display: flex;
     flex-direction: row;
-    margin-right: 20px;
+    margin-right: 1vh;
 }
 h2{
-    margin-left: 10px;
+    margin-left: 1vh;
     background: #204B5E;
     color:#FDFAC7;
+}
+
+iframe{
+    width: 90vh;
+    height: 40vh;
 }
