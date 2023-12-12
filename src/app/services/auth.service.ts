@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat/app';
 import { Router } from '@angular/router';
+import { user } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,13 +20,8 @@ export class AuthService {
     }
   }
 
-  async register(email: string, password: string) {
-    try{
-      return await this.afAuth.createUserWithEmailAndPassword(email, password);
-    }catch(error){
-      console.dir(error);
-      return error
-    }
+  register(data: user){
+    return this.afAuth.createUserWithEmailAndPassword(data.email, data.password);
   }
 
   async loginWhitGoogle(){
@@ -51,4 +47,7 @@ export class AuthService {
     return this.afAuth.sendPasswordResetEmail(email)
   }
   
+  navigateToTabs(){
+    this.router.navigate(['/tabs']);
+  }
 }

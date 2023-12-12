@@ -33,7 +33,7 @@ export class LoginPage implements OnInit {
     this.autSercice
       .login(email, password)
       .then((res) => {
-        console.log('Usuario registrado: ', res);
+        console.log('Usuario iniciado: ', res);
         this.navigateToTabs();
       })
       .catch((error) => {
@@ -46,7 +46,7 @@ export class LoginPage implements OnInit {
     this.autSercice
       .loginWhitGoogle()
       .then((res) => {
-        console.log('Usuario registrado: ', res);
+        console.log('Usuario iniciado: ', res);
         this.navigateToTabs();
       })
       .catch((error) => {

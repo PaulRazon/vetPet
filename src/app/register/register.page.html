@@ -14,11 +14,15 @@
   <div class="main">
     <h1>Crear cuenta</h1>
     <div class="login">
+
+      <label for="">Nombre</label>
+      <input type="text" placeholder="ingrese su nombre" [(ngModel)]="data.name"/>
+
       <label for="">Email</label>
-      <input type="email" placeholder="ingrese su email" [(ngModel)]="usuario.email"/>
+      <input type="email" placeholder="ingrese su email" [(ngModel)]="data.email"/>
 
       <label for="">Password</label>
-      <input type="password" placeholder="ingrese su password" [(ngModel)]="usuario.password"/>
+      <input type="password" placeholder="ingrese su password" [(ngModel)]="data.password"/>
 
       <button (click)="register()">Registrarse</button> 
 
