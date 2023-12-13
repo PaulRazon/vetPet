@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
 import { AuthService } from '../services/auth.service';
 import { AlertController } from '@ionic/angular';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-tab4',
@@ -41,7 +42,8 @@ export class Tab4Page {
 
   constructor(
     private router: Router, private productService: ProductService, private authService: AuthService,
-    private alertController: AlertController) {
+    private alertController: AlertController,
+    private cartService: CartService) {
       this.productService.getProducts().subscribe((products: Product[]) => {
         this.products = products;
         this.productsFounds = this.products;
@@ -69,6 +71,61 @@ export class Tab4Page {
     let color = itemFound && itemFound.color ? itemFound.color : "";
     return color;
   }
+
+  async mostrarConfirmacion(name:string) {
+
+    this.productService.pos = this.products.findIndex(item => item.name == name);
+    this.productService.productwhere = this.products[this.productService.pos];
+    this.productService.productCollection.snapshotChanges().subscribe((data) => {
+      this.productService.productwhere.id = data[this.productService.pos].payload.doc.id;
+    });
+
+  const alert = await this.alertController.create({
+    header: 'Alerta',
+    message: '¿Quieres eliminar el producto seleccionado?',
+    buttons: [
+      {
+        text: 'No',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: (blah) => {
+          console.log('Acción cancelada');
+        }
+      }, {
+        text: 'Sí',
+        handler: () => {
+          this.productService.deleteProduct(this.productService.productwhere);
+        }
+      }
+    ]
+  });
+
+  await alert.present();
+}
+
+openProductUpdatePage(name:string) {
+  this.productService.pos = this.products.findIndex(item => item.name == name);
+  this.productService.productwhere = this.products[this.productService.pos];
+  this.productService.productCollection.snapshotChanges().subscribe((data) => {
+    this.productService.productwhere.id = data[this.productService.pos].payload.doc.id;
+  });
+  console.log(this.productService.productwhere);
+  
+  
+  this.router.navigate(['/update-product']);
+  
+}
+
+public addToCart(product: Product, i: number) {
+  product.photo = product.photo + i;
+  this.cartService.addToCart(product);
+  console.log(this.cartService.getCart());
+}
+
+openCartPage() {
+  this.router.navigate(['/cart-page']);
+}
+
 
 
 }

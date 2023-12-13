@@ -26,8 +26,15 @@ const routes: Routes = [
   {
     path: 'add-product',
     loadChildren: () => import('./add-product/add-product.module').then( m => m.AddProductPageModule)
-
+  },
+  {
+    path: 'update-product',
+    loadChildren: () => import('./update-product/update-product.module').then( m => m.UpdateProductPageModule)
+  },  {
+    path: 'cart-page',
+    loadChildren: () => import('./cart-page/cart-page.module').then( m => m.CartPagePageModule)
   }
+
 
 ];
 
