@@ -33,6 +33,13 @@ export class AuthService {
     }
   }
 
+  isUserAuthenticated(): Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
+      this.afAuth.onAuthStateChanged((user) => {
+        resolve(!!user); // Devuelve true si hay un usuario autenticado, false de lo contrario
+      });
+    });
+  }
   getUserLogin(){
     return this.afAuth.authState
   }

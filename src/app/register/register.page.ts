@@ -34,7 +34,6 @@ export class RegisterPage implements OnInit {
       const path = 'Users';
       const id = res.user.uid;
       this.data.uid = id;
-      this.data.password = '';
       this.userService.createdoc(this.data, path, id);
       this.autSercice.navigateToTabs();
     }
