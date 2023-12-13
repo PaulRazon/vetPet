@@ -2,6 +2,7 @@ $base-color: #204B5E;
 $secondary-color: #BAAB6A;
 $terciary-color: #FDFAC7;
 
+
 h3 {
   color: $secondary-color;
 }
@@ -11,8 +12,10 @@ h3 {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  //height: 100%;
 }
+
+
 
 .categoria {
   width: 460px;
@@ -51,11 +54,7 @@ ion-content {
   /* Cambia el color de fondo si es necesario */
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 
 .filter {
   margin-bottom: 10px;
@@ -127,4 +126,20 @@ ion-content {
 .thefront img,
 .theback img {
   width: 100%;
+}
+
+.cart-button{
+  position: absolute;
+  bottom: 50px; 
+  left: 10px;
+  background-color: $secondary-color;
+  color: white;
+  width: calc(100% - 20px);
+}
+
+ion-fab-button {
+  --background: #204B5E;
+  --border-radius: 15px;
+  --box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --color: white;
 }

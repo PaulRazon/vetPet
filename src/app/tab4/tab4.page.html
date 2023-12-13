@@ -10,6 +10,12 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+  <ion-fab vertical="top" horizontal="start" slot="fixed">
+    <ion-fab-button  (click)="openCartPage()">
+      <ion-icon name="cart-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
   <div class="main">
     <div class="filter">
       <ion-select label="Tipo" 
@@ -20,14 +26,14 @@
                 (ionChange)="filterProducts()"
                 class = "custom-select"
     >
-      <ion-select-option value="Juguetes y accesorios">Juguetes y accesorios</ion-select-option>
+      <ion-select-option value="Juguetes y Accesorios">Juguetes y Accesorios</ion-select-option>
       <ion-select-option value="Ropa">Ropa</ion-select-option>
       <ion-select-option value="Limpieza">Limpieza</ion-select-option>
       <ion-select-option value="Alimento">Alimento</ion-select-option>
     </ion-select>
     </div>
     <div class="maincontainer">
-      <ng-container *ngFor="let product of productsFounds; index as i">
+      <ng-container size="3" *ngFor="let product of productsFounds; index as i">
         <div class="thecard">
           <div class="thefront">
             <ion-card-title>
@@ -41,6 +47,11 @@
           <div class="theback">
             <h1>{{ product.price| currency }}</h1>
             <p>{{product.description}}</p>
+
+            <ion-button class="cart-button" expand="full" color="tertiary" (click)="addToCart(product, i)">
+              <ion-icon name="cart-outline"></ion-icon> 
+            </ion-button>
+            
             <ion-buttons class="ion-justify-content-between">
               <ion-button expand="block"color="warning" (click)="openProductUpdatePage(product.name)">
                 <ion-icon size="large" name="pencil"></ion-icon>
@@ -48,10 +59,7 @@
               <ion-button expand="block"color="danger" (click)="mostrarConfirmacion(product.name)">
                 <ion-icon size="large" name="trash-outline"></ion-icon>
               </ion-button>
-              <ion-button expand="block">
-                <ion-icon name="cart-outline" ></ion-icon>
-  
-              </ion-button>
+
               
             </ion-buttons>
             

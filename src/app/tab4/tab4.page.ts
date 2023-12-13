@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
 import { AuthService } from '../services/auth.service';
 import { AlertController } from '@ionic/angular';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-tab4',
@@ -41,7 +42,8 @@ export class Tab4Page {
 
   constructor(
     private router: Router, private productService: ProductService, private authService: AuthService,
-    private alertController: AlertController) {
+    private alertController: AlertController,
+    private cartService: CartService) {
       this.productService.getProducts().subscribe((products: Product[]) => {
         this.products = products;
         this.productsFounds = this.products;
@@ -112,6 +114,16 @@ openProductUpdatePage(name:string) {
   
   this.router.navigate(['/update-product']);
   
+}
+
+public addToCart(product: Product, i: number) {
+  product.photo = product.photo + i;
+  this.cartService.addToCart(product);
+  console.log(this.cartService.getCart());
+}
+
+openCartPage() {
+  this.router.navigate(['/cart-page']);
 }
 
 

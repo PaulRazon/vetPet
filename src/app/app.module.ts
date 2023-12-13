@@ -12,8 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, ReactiveFormsModule,AngularFireModule.initializeApp(environment.firebaseConfig)],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule,AngularFireModule.initializeApp(environment.firebaseConfig),FirestoreModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, ReactiveFormsModule,AngularFireModule.initializeApp(environment.firebaseConfig), FirestoreModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
