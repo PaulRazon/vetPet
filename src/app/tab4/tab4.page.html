@@ -53,10 +53,10 @@
             </ion-button>
             
             <ion-buttons class="ion-justify-content-between">
-              <ion-button expand="block"color="warning" (click)="openProductUpdatePage(product.name)">
+              <ion-button expand="block"color="warning" (click)="openProductUpdatePage(product.name)" *ngIf="rol == 'admin'">
                 <ion-icon size="large" name="pencil"></ion-icon>
               </ion-button>
-              <ion-button expand="block"color="danger" (click)="mostrarConfirmacion(product.name)">
+              <ion-button expand="block"color="danger" (click)="mostrarConfirmacion(product.name)" *ngIf="rol == 'admin'">
                 <ion-icon size="large" name="trash-outline"></ion-icon>
               </ion-button>
 
