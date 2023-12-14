@@ -52,7 +52,7 @@ async login() {
     this.autService
       .loginWhitGoogle()
       .then((res) => {
-        console.log('Usuario iniciado: ', res);
+        //console.log('Usuario iniciado: ', res);
       })
       .catch((error) => {
         console.error('Error al iniciar sesión con Google: ', error);

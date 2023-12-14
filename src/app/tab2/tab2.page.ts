@@ -80,7 +80,7 @@ export class Tab2Page implements OnInit{
                 position: 'top' // Posición superior
               });
               toast.present();
-              
+              this.citaForm.reset();
           }else{
             console.log('Error al guardar el Cita');
           }
