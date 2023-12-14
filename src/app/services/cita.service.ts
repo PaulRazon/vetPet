@@ -9,6 +9,7 @@ import { AuthService } from './auth.service';
 })
 export class CitaService {
   private cita:Observable<Cita[]>;
+  public emailOnline:string="";
   public citaCollection:AngularFirestoreCollection<Cita>;
   public user:Cita={
     id:'',
@@ -18,14 +19,14 @@ export class CitaService {
     hora:'',
     tipo:'',
     observaciones:'',
-    username:''
+    email:''
   }
   constructor(private firestore: AngularFirestore,private authService: AuthService) { 
     
     
     this.authService.getUserLogin().subscribe(data => {
-      if (data?.displayName!==null) {
-        this.user.username = data?.displayName;
+      if (data?.email!==null) {
+        this.user.email = data?.email;
       }
       
     });
@@ -76,6 +77,8 @@ export class CitaService {
   }
   //OBTENER DE FIREBASE
   getDates(): Observable<Cita[]> {
-    return this.firestore.collection<Cita>('cita', ref => ref.where('username', '==', this.user.username)).valueChanges();
+  
+  
+    return this.firestore.collection<Cita>('cita', ref => ref.where('email', '==', this.user.email)).valueChanges();
   }
 }
