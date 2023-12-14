@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component ,OnInit} from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CitaService } from '../services/cita.service';
 import { ToastController } from '@ionic/angular';
 import { Cita } from '../models/cita.model';
-import { Observable } from 'rxjs';
+
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -12,7 +11,7 @@ import { AuthService } from '../services/auth.service';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page {
+export class Tab2Page implements OnInit{
   citaForm:FormGroup;
   public citas:Cita[] =[];
   public userlogin = this.authService.getUserLogin();
@@ -24,9 +23,24 @@ export class Tab2Page {
     hora:'',
     tipo:'',
     observaciones:'',
-    username:''
+    email:''
   }
 
+  ngOnInit() {
+    this.authService.getUserLogin().subscribe(userData => {
+      if (userData?.email) {
+        this.user.email = userData.email;
+        //console.log('Correo electrónico obtenido:', this.user.email);
+        this.loadData();
+      }
+    });
+  }
+  private loadData() {
+    this.citaService.getDates().subscribe(data => {
+      //console.log('Datos cargados:', data);
+      this.citas = data;
+    });
+  }
   constructor(private authService: AuthService,private citaService:CitaService,private formBuilder:FormBuilder,private toastController:ToastController) {
     this.citaForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -39,23 +53,22 @@ export class Tab2Page {
 
    //Mete retraso para que la base de datos cargue y se actualice el usuario
     setTimeout(() => {
+ 
       this.citaService.getDates().subscribe(data => {
         console.log(data);
         this.citas = data;
       });
-    }, 100);
+    }, 500);
     
     
   }
+
   async addCita(){
-    if (this.citaForm.valid) {
+    if (await this.validationDate() && this.citaForm.valid) {
       const cita = this.citaForm.value;
-      this.userlogin.subscribe(e=>{
-        
-        
-        cita.username = e?.displayName;
-        console.log(cita.username);
-      });
+      this.citas.forEach(element => {
+        cita.email = element.email;
+      })
       
       this.citaService.saveProduct(cita)
           .then(async (result)=>{
@@ -67,7 +80,7 @@ export class Tab2Page {
                 position: 'top' // Posición superior
               });
               toast.present();
-              
+              this.citaForm.reset();
           }else{
             console.log('Error al guardar el Cita');
           }
@@ -79,7 +92,29 @@ export class Tab2Page {
       console.warn('El formulario no es válido. Por favor, completa todos los campos requeridos.');
     }
   }
-  ngOnInit() {
-    
+  async validationDate(): Promise<boolean> {
+    const selectedDate: Date = new Date(this.citaForm.value.fecha);
+    const currentDate: Date = new Date();
+    //transformarla a numeros
+    const fecha1 = (selectedDate.getDay()+selectedDate.getMonth()+selectedDate.getFullYear()+1);
+    const fecha2 = (currentDate.getDay()+currentDate.getMonth()+currentDate.getFullYear());
+
+    // console.log((selectedDate.getDay()+selectedDate.getMonth()+selectedDate.getFullYear())+1);
+    // console.log(currentDate.getDay()+currentDate.getMonth()+currentDate.getFullYear());
+  
+    if (fecha1 <= fecha2) {
+     // console.log('La fecha seleccionada no es válida. Debe ser posterior a la fecha actual.');
+      const toast = await this.toastController.create({
+        message: 'Fecha es incorrecta debe ser posterior a la fecha actual',
+        duration: 2000, // Duración de 2 segundos
+        position: 'top' // Posición superior
+      });
+      toast.present();
+      return false;
+    }
+      
+  
+    return true;
   }
+
 }

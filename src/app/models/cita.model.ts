@@ -6,5 +6,5 @@ export interface Cita{
     hora?:string;
     tipo?:string;
     observaciones?:string;
-    username?:string;
+    email?:string;
 }

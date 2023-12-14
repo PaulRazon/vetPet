@@ -68,7 +68,7 @@ export class Tab4Page {
     const path = 'Users';
     const id = uid;
     return this.userService.getUser<user>(path, id).subscribe((res) => {
-      console.log('datos->', res);
+      //console.log('datos->', res);
       if (res) {
         this.rol = res.rol;
       }

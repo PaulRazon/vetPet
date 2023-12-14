@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { VerCitasPageRoutingModule } from './ver-citas-routing.module';
-
+import { ToolbarModule } from '../toolbar/toolbar.module';
 import { VerCitasPage } from './ver-citas.page';
 
 @NgModule({
@@ -14,6 +14,7 @@ import { VerCitasPage } from './ver-citas.page';
     FormsModule,
     IonicModule,
     VerCitasPageRoutingModule
+    ,ToolbarModule
   ],
   declarations: [VerCitasPage]
 })

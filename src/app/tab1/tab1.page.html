@@ -8,8 +8,10 @@
   <div class="main">
     <img id="img-golden" src="../../assets/img/golden-perro.jpg" alt="golden" srcset="">
     <div class="advice">
-      <h4>AGENDA TU CITA PARA TU MASCOTA</h4>
-      <button type="button" id="boton-agendar" (click)="navigateToRegister()">Agendar</button>
+      <h4 *ngIf="rol!='admin'">AGENDA TU CITA PARA TU MASCOTA</h4>
+      <h4 *ngIf="rol=='admin'">Bienvenido administrador(a) <hr>{{name}}</h4>
+      <button type="button" id="boton-agendar" (click)="navigateToRegister()" *ngIf="rol!='admin'">Agendar</button>
+      <button type="button" id="boton-agendar" (click)="navigateToDates()" *ngIf="rol=='admin' ">Ver citas</button>
     </div>
   </div>
 </ion-content>

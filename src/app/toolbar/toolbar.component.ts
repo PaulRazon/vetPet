@@ -36,9 +36,7 @@ export class ToolbarComponent  implements OnInit {
   ngOnInit() {}
 
   logout(){
-    window.location.reload();
     this.autSercice.logout();
-    this.router.navigate(['/tabs/tab1']);
   }
 
   getData(uid:string){
@@ -54,5 +52,8 @@ export class ToolbarComponent  implements OnInit {
   }
   navigateToLogin(){
     this.router.navigate(['/login']);
+  }
+  reloadPage() {
+    window.location.reload();
   }
 }

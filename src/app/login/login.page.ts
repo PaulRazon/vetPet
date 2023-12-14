@@ -52,7 +52,7 @@ async login() {
     this.autService
       .loginWhitGoogle()
       .then((res) => {
-        console.log('Usuario iniciado: ', res);
+        //console.log('Usuario iniciado: ', res);
       })
       .catch((error) => {
         console.error('Error al iniciar sesión con Google: ', error);
@@ -85,6 +85,9 @@ async login() {
     this.router.navigate(['/login']);
   }
 
+  navigateToTab() {
+    this.router.navigate(['/tabs/tab1']);
+  }
   passwordReset(email: string) {
     this.autService.resetPassword(email);
   }
