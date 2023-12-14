@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-
+import { Component ,OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CitaService } from '../services/cita.service';
 import { ToastController } from '@ionic/angular';
@@ -12,7 +11,7 @@ import { AuthService } from '../services/auth.service';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page {
+export class Tab2Page implements OnInit{
   citaForm:FormGroup;
   public citas:Cita[] =[];
   public userlogin = this.authService.getUserLogin();
@@ -27,6 +26,21 @@ export class Tab2Page {
     email:''
   }
 
+  ngOnInit() {
+    this.authService.getUserLogin().subscribe(userData => {
+      if (userData?.email) {
+        this.user.email = userData.email;
+        //console.log('Correo electrónico obtenido:', this.user.email);
+        this.loadData();
+      }
+    });
+  }
+  private loadData() {
+    this.citaService.getDates().subscribe(data => {
+      //console.log('Datos cargados:', data);
+      this.citas = data;
+    });
+  }
   constructor(private authService: AuthService,private citaService:CitaService,private formBuilder:FormBuilder,private toastController:ToastController) {
     this.citaForm = this.formBuilder.group({
       name: ['', Validators.required],

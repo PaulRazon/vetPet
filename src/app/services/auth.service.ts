@@ -46,7 +46,9 @@ export class AuthService {
   
   logout(){
     this.afAuth.signOut().then(() =>{
-      this.router.navigate(['/tabs']);
+      this.router.navigate(['/tabs/tab1']).then(() =>{
+        window.location.reload();
+      })
     })
   }
 

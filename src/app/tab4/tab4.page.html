@@ -48,7 +48,7 @@
             <h1>{{ product.price| currency }}</h1>
             <p>{{product.description}}</p>
 
-            <ion-button class="cart-button" expand="full" color="tertiary" (click)="addToCart(product, i)">
+            <ion-button class="cart-button" expand="full" color="tertiary" (click)="addToCart(product, i)" *ngIf="rol != 'admin'">
               <ion-icon name="cart-outline"></ion-icon> 
             </ion-button>
             

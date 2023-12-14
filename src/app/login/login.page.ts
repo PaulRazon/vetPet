@@ -85,6 +85,9 @@ async login() {
     this.router.navigate(['/login']);
   }
 
+  navigateToTab() {
+    this.router.navigate(['/tabs/tab1']);
+  }
   passwordReset(email: string) {
     this.autService.resetPassword(email);
   }
