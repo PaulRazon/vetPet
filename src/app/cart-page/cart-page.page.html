@@ -36,13 +36,11 @@
           <ion-label>Total:</ion-label>
           <ion-note slot="end" class="total-amount">{{ cart.total | currency:'MXN':'symbol':'1.2-2' }}</ion-note>
         </ion-item>
-    
-        <ion-button (click)="hacerCompra()" expand="full" style="background-color: #204B5E;" color="#204B5E">
-          Realizar Compra
-        </ion-button>
+  
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
       </ion-card-content>
     </ion-card>
-    
   </div>
 </ion-content>
+
 

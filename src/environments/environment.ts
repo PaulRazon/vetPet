@@ -5,13 +5,14 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: "AIzaSyBCRuAEXLBnSR14Oz5N0ZsVtiAiEr39ERk",
-    authDomain: "vetpet-ac940.firebaseapp.com",
-    projectId: "vetpet-ac940",
-    storageBucket: "vetpet-ac940.appspot.com",
-    messagingSenderId: "970317779493",
-    appId: "1:970317779493:web:8082df83afc45add9425cc"
-  }
+    apiKey: "AIzaSyA24Dwp-OmxZwFHPU7GMqzQyMzapdmwpdg",
+    authDomain: "vetpet-d6af2.firebaseapp.com",
+    projectId: "vetpet-d6af2",
+    storageBucket: "vetpet-d6af2.appspot.com",
+    messagingSenderId: "560150024032",
+    appId: "1:560150024032:web:bca4870c04f75932559805"
+  },
+  clientId: 'AViIgKSJIWP9T_GUAI-KKy2txwGsgujHzEi7nsxu_UiWpj9AarjRnLWHAJdLpMK9w3ocKyjj_O-AA7cY',
 };
 
 /*

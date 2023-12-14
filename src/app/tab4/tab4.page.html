@@ -15,7 +15,6 @@
       <ion-icon name="cart-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
   <div class="main">
     <div class="filter">
       <ion-select label="Tipo" 
@@ -42,7 +41,7 @@
               </h1>
               <ion-badge [color]="getColor(product.type)">{{product.type}}</ion-badge>
             </ion-card-title>
-            <img [src]="product.photo+i">
+            <img [src]="product.photo+i" alt="golden" srcset="">
           </div>
           <div class="theback">
             <h1>{{ product.price| currency }}</h1>

@@ -2,7 +2,6 @@ $base-color: #204B5E;
 $secondary-color: #BAAB6A;
 $terciary-color: #FDFAC7;
 
-
 h3 {
   color: $secondary-color;
 }
@@ -10,51 +9,30 @@ h3 {
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  //height: 100%;
-}
-
-
-
-.categoria {
-  width: 460px;
-  height: 275px;
-  border: 1px solid $secondary-color;
-  margin: 15px;
-  background-color: $base-color;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.categoria img {
-  width: 100%;
+  text-align: center;
+  overflow-y: auto; 
+  max-height: 100vh;
 }
 
 .custom-select {
   --background: #204B5E;
-  /* Color de fondo */
   --border-color: #BAAB6A;
-  /* Color del borde */
   --placeholder-color: #FDFAC7;
-  /* Color del texto de marcador de posición */
   --color: #FDFAC7;
-  /* Color del texto seleccionado */
   --icon-color: #FDFAC7;
-  /* Color del icono */
+  padding-top: 100px;
 }
 
 ion-content {
   --ion-background-color: #3C5377;
-  /* Cambia el color de fondo si es necesario */
 }
 
-
+ion-card-title{
+  background: $base-color;
+  color: $secondary-color;
+}
 
 .filter {
   margin-bottom: 10px;
@@ -125,10 +103,12 @@ ion-content {
 
 .thefront img,
 .theback img {
-  width: 100%;
+  width: 200px;
+  height: 180px;
 }
 
-.cart-button{
+
+.cart-button {
   position: absolute;
   bottom: 50px; 
   left: 10px;
