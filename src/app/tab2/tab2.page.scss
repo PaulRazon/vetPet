@@ -1,0 +1,99 @@
+.main{
+  display: flex;
+  flex-direction: row;
+  color: #FDFAC7;
+
+}
+
+.citas{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #204B5E;
+  width: 60vh;
+  height: 75vh;
+}
+.formulario{
+  border: solid 0.3vh #49A89A;
+  margin: 1vh;
+  width: 90%;
+  height: 90%;
+  margin-bottom: 5%;
+}
+.citas_b{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #204B5E;
+  width: 60vh;
+  height: 75vh;
+}
+.registro{
+  border: solid 0.3vh #49A89A;
+  margin: 1vh;
+  width: 90%;
+  height: 90%;
+  margin-bottom: 5%;
+  overflow-y: auto;
+}
+td{
+  padding-left: 3vh;
+  padding-right: 2vh;
+  padding-top: 2vh;
+}
+
+input{
+  background: #204B5E;
+}
+
+select{
+  width: 40%;
+  border-bottom:solid 0.5vh #BAAB6A;
+  background: #204B5E;
+}
+
+.observaciones{
+  width:70%;
+  border-bottom:solid 0.5vh #BAAB6A;
+  background: #204B5E;
+}
+
+button{
+  color: #FDFAC7;
+  margin: 2vh;
+  background: #49A89A;
+  width: 20vh;
+  height: 5vh;
+  font-size: 100%;
+}
+
+.nombre{
+  width: 20vh;
+  border-bottom:solid 0.5vh #BAAB6A;
+  background: #204B5E;
+}
+
+.propietario{
+  width: 20vh;
+  border-bottom:solid 0.5vh #BAAB6A;
+  background: #204B5E;
+}
+
+.tarjeta{
+  border: solid 0.3vh #49A89A;
+}
+
+.historial{
+  margin: auto;
+}
+
+h1{
+  font-size: 5vh;
+}
+
+h2{
+  font-size: 4vh;
+  margin-top: 5vh;
+}

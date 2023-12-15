@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="mycolor">
+    <div class="header" >
+      <img id="img-logo" src="../../assets/img/logo_patitas.png" alt="logo" />
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+    </ion-toolbar>
+  </ion-header>
+  <div class="main">
+    <h1>Crear cuenta</h1>
+    <div class="login">
+
+      <label for="">Nombre</label>
+      <input type="text" placeholder="ingrese su nombre" [(ngModel)]="data.name"/>
+
+      <label for="">Email</label>
+      <input type="email" placeholder="ingrese su email" [(ngModel)]="data.email"/>
+
+      <label for="">Password</label>
+      <input type="password" placeholder="ingrese su password" [(ngModel)]="data.password"/>
+
+      <button (click)="register()">Registrarse</button> 
+
+    </div>
+  </div>
+</ion-content>

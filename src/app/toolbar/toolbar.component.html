@@ -1,0 +1,9 @@
+<div class="header" >
+  <img id="img-logo" src="../../assets/img/logo_patitas.png" alt="logo" />
+  <div class="usuario" *ngIf="userlogin|async as user">
+    <img  *ngIf="user.photoURL" src="{{user.photoURL}}" alt="imagen usuario" srcset="" />
+    <label for="">{{user.displayName ? user.displayName :name}}</label>
+    <button  (click)="logout()">Cerrar sesion</button>
+  </div>
+  <button *ngIf="(userlogin|async) === null" class="boton" (click)="navigateToLogin()">Iniciar sesion</button>
+</div>

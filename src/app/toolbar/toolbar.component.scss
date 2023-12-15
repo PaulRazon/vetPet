@@ -1,0 +1,28 @@
+img{
+  height: 5vh;
+  width: 5vh;
+  border-radius: 30%;
+  margin-right: 3%;
+}
+label{
+  margin-right: 2%;
+  font-size: 90%;
+}
+
+button{
+  width: 20vh;
+  height: 20%;
+  background-color:#204B5E;
+  color: #FDFAC7;
+}
+
+.usuario{
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  justify-content: right;
+}
+
+.boton{
+  margin-right: 3%;
+}

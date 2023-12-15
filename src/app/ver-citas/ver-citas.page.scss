@@ -1,0 +1,73 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    color: #FDFAC7;
+    
+}
+.citas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #204B5E;
+    width: 900px;
+    height: 500px;
+}
+
+.citas_b{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #204B5E;
+    width: 800px;
+    height: 600px;
+}
+
+td{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+
+button{
+    color: #FDFAC7;
+    margin: 20px;
+    background: #49A89A;
+    width: 50%;
+    height: 40px;
+    font-size: 20px;
+}
+
+.atendida {
+    background:#3498db;
+}
+
+.cancelar {
+    background: #d35400;
+  }
+
+
+.atendida, .cancelar {
+    width: 80px;
+    display: inline-block; 
+}
+
+
+.registro{
+    border: solid 1px #49A89A;
+    margin: 10px;
+    width: 90%;
+    height: 90%;
+    margin-bottom: 30px;
+}
+
+.tarjeta{
+    border: solid 1px #49A89A;
+    margin-top: 10px;
+}
+
+.historial{
+    margin: auto;
+}

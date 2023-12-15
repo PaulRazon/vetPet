@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <app-toolbar></app-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="main">
+    <div class="citas_b">
+      <h1>Compras realizadas</h1>
+      <div class="registro">
+        <table class="historial">
+          <tr>
+            <td>Productos</td>
+            <td>total</td>
+            <td>Estatus</td>
+            <td>Acciones</td>
+          </tr>
+          <hr>
+          <tr class="tarjeta" *ngFor="let cart of cartsFounds; index as i;">
+            <div *ngFor="let item of cart.items">
+              {{ item.product.name }}
+            </div>
+            <td>{{cart.total}}</td>
+            <td>{{cart.status}}</td>
+            <td><button class="atendida button" (click)="marcarEntregado(i)"*ngIf="cart.status === 'espera'">Entregar</button></td>
+          </tr>
+          <hr>
+        </table>
+      </div>
+    </div>
+  </div>
+</ion-content>

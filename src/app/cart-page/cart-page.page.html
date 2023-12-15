@@ -1,0 +1,49 @@
+<ngx-spinner type="ball-scale-multiple">
+  <h3>Transacción en proceso, por favor, espere...</h3>
+</ngx-spinner>
+<ion-header [translucent]="true">
+  <ion-toolbar color="mycolor">
+    <app-toolbar>Mi carrito</app-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="main">
+    <ion-card style="">
+      <ion-card-content style="display: flex; flex-direction: column; height: 100%;">
+        <ion-card-header style="background-color: #204B5E; text-align: center; color: white">
+          <ion-card-title style="color: white">
+            Carrito de compras
+          </ion-card-title>
+        </ion-card-header>
+        <ion-list lines="none" class="cart-container" style="flex: 1; overflow-y: auto;">
+          <ng-container *ngFor="let item of cart.items">
+            <ion-item class="cart-item">
+              <ion-thumbnail slot="start">
+                <img [src]="item.product.photo" alt="{{ item.product.name }}">
+              </ion-thumbnail>
+              <ion-label class="item-details">
+                <h2>{{ item.product.name }}</h2>
+                <p>{{ item.product.description }}</p>
+                <p>Precio: ${{ item.product.price }}</p>
+                <p>Cantidad: {{ item.quantity }}</p>
+              </ion-label>
+              <ion-button (click)="promptRemoveItem(item)" fill="clear" color="danger" class="remove-button">
+                Eliminar
+              </ion-button>
+            </ion-item>
+          </ng-container>
+        </ion-list>
+    
+        <ion-item class="total-item">
+          <ion-label>Total:</ion-label>
+          <ion-note slot="end" class="total-amount">{{ cart.total | currency:'MXN':'symbol':'1.2-2' }}</ion-note>
+        </ion-item>
+  
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+

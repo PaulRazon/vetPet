@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="mycolor">
+    <ion-title>addProduct</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">addProduct</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card-content>
+    <div class="main">
+
+      <h2 class="header-text">Actualizar Producto</h2>
+      
+      <div class="login">
+        <form [formGroup]="updateForm" (ngSubmit)="updateProduct()">
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input type="text" formControlName="name"></ion-input>
+
+          <ion-label position="floating">Descripción</ion-label>
+          <ion-textarea formControlName="description"></ion-textarea>
+
+          <ion-label position="floating">Precio</ion-label>
+          <ion-input type="number" formControlName="price"></ion-input>
+
+          <ion-label>Imagen</ion-label>
+          <ion-input type="text" formControlName="photo"></ion-input>
+
+          <ion-label>Tipo</ion-label>
+          <ion-select formControlName="type">
+            <ion-select-option value="Juguetes y Accesorios"
+              >Juguetes y Accesorios</ion-select-option
+            >
+            <ion-select-option value="Ropa">Ropa</ion-select-option>
+            <ion-select-option value="Limpieza">Limpieza</ion-select-option>
+            <ion-select-option value="Alimento">Alimento</ion-select-option>
+          </ion-select>
+
+          <button
+            class="button-update"
+            expand="block"
+            type="submit"
+            [disabled]="!updateForm.valid"
+            color="orange"
+          >
+            Guardar
+          </button>
+        </form>
+      </div>
+    </div>
+    
+  </ion-card-content>
+</ion-content>

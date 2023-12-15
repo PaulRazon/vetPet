@@ -1,0 +1,62 @@
+h1 {
+    color: #baab6a;
+  }
+  
+  .header-text {
+    font-size: 24px;
+    color: #fdfac7; /* Color del texto */
+    background: #204b5e; /* Color de fondo */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 20px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .login {
+    background: #204b5e;
+    color: #baab6a;
+    width: 70vw;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  ion-item{
+    margin-bottom: 10px;
+    color: #baab6a;
+    background: lightgray;
+  }
+  
+  ion-label {
+    margin-bottom: 10px;
+    color: #baab6a;
+  }
+  
+  ion-input,
+  ion-textarea,
+  ion-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background: lightgray;
+  }
+
+
+  
+  button {
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    color: #fdfac7;
+    background: #49a89a;
+    font-size: 20px;
+  }
+  

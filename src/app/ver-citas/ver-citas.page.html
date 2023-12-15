@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <app-toolbar></app-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="main">
+    <div class="citas_b">
+      <h1>Ver citas</h1>
+      <h2>Hoy</h2>
+      <div class="registro">
+        <table class="historial">
+          <tr>
+            <td>Nombre del paciente</td>
+            <td>Fecha</td>
+            <td>Hora</td>
+            <td>Tipo</td>
+            <td>Observaciones</td>
+          </tr>
+          <hr>
+          <tr class="tarjeta" *ngFor="let cita of citasFounds; index as i;">
+            <td>{{cita.name}}</td>
+            <td>{{cita.fecha}}</td>
+            <td>{{cita.hora}}</td>
+            <td>{{cita.tipo}}</td>
+            <td>{{cita.observaciones}}</td>
+            <td><button class="atendida button" (click)="validarCita(i)"*ngIf="cita.status === 'pendiente'">Atendida</button>
+            <button class="cancelar button" (click)="cancelarCita(i)" *ngIf="cita.status === 'pendiente'">Cancelar</button></td>
+          </tr>
+          <hr>
+        </table>
+      </div>
+    </div>
+  </div>
+</ion-content>

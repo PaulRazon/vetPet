@@ -1,0 +1,38 @@
+h1{
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #204B5E;
+  width: 55vh;
+  height: 4vh;
+  text-align:center;
+  color: #FDFAC7;
+  font-size: 100%;
+}
+.mapa{
+  margin-top: 2%;
+  border: 3vh solid #204B5E;
+  margin-bottom: 2%;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+}
+
+.contacto{
+  display: flex;
+  flex-direction: row;
+  margin-right: 1vh;
+}
+h2{
+  margin-left: 1vh;
+  background: #204B5E;
+  color:#FDFAC7;
+}
+
+iframe{
+  width: 90vh;
+  height: 40vh;
+}

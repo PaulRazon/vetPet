@@ -1,0 +1,131 @@
+$base-color: #204B5E;
+$secondary-color: #BAAB6A;
+$terciary-color: #FDFAC7;
+
+h3 {
+  color: $secondary-color;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow-y: auto; 
+  max-height: 100vh;
+}
+
+.custom-select {
+  --background: #204B5E;
+  --border-color: #BAAB6A;
+  --placeholder-color: #FDFAC7;
+  --color: #FDFAC7;
+  --icon-color: #FDFAC7;
+  padding-bottom: 2vh;
+  width: 60vh;
+  border-radius: 15px;
+}
+ion-content {
+  --ion-background-color: #3C5377;
+}
+
+ion-select {
+  border-radius: 15px;
+}
+
+ion-card-title{
+  background: $base-color;
+  color: $secondary-color;
+}
+
+.filter {
+  z-index: 2;
+  color: #BAAB6A;
+}
+
+.maincontainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  width: 180vh;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.thecard {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: none;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+}
+
+.thecard:hover {
+  transform: rotateY(180deg);
+}
+
+.thefront,
+.theback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.thefront {
+  background: $secondary-color;
+  color: $base-color;
+}
+
+.theback {
+  background: $base-color;
+  color: $terciary-color;
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+.thefront h1,
+.theback h1 {
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+
+.thefront p,
+.theback p {
+  font-weight: normal;
+  font-size: 12px;
+  text-align: center;
+}
+
+.thefront img,
+.theback img {
+  width: 200px;
+  height: 180px;
+}
+
+
+.cart-button {
+  position: absolute;
+  bottom: 50px; 
+  left: 10px;
+  background-color: $secondary-color;
+  color: white;
+  width: calc(100% - 20px);
+}
+
+ion-fab-button {
+  --background: #204B5E;
+  --border-radius: 15px;
+  --box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --color: white;
+}
