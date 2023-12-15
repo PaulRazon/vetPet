@@ -98,27 +98,39 @@ export class CartPagePage implements OnInit {
   }
 
   async hacerCompra() {
-    this.cartService
-      .buyProducts(this.cart)
-      .then(async (result) => {
-        if (result === 'success') {
-          const toast = await this.toastController.create({
-            message: 'Compra exitosa',
-            duration: 2000,
-            position: 'top',
-          });
-          toast.present();
-        } else {
-          console.log('Error al guardar el producto');
-        }
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+    try {
+      // Asignar el estado al carrito antes de la compra
+      this.cart.status = 'espera';
+      this.cart.id = this.cart.id;
+  
+      const result = await this.cartService.buyProducts(this.cart);
+  
+      if (result === 'success') {
+        // Obtener el ID del carrito después de la compra
+        const idDelCarrito = this.cart.id;
+  
+        // Puedes utilizar idDelCarrito según tus necesidades
+        console.log('ID del carrito después de la compra:', idDelCarrito);
+  
+        // Resto del código para mostrar el mensaje de éxito
+        const toast = await this.toastController.create({
+          message: 'Compra exitosa',
+          duration: 2000,
+          position: 'top',
+        });
+        toast.present();
+      } else {
+        console.log('La compra no se completó correctamente.');
+      }
+    } catch (error) {
+      console.error('Error al realizar la compra:', error);
+    } finally {
+      // Limpiar el carrito después de la compra (independientemente del resultado)
       this.cart.items = [];
-      this.cart.total = 0; 
+      this.cart.total = 0;
+    }
   }
-
+   
   async promptRemoveItem(item: CartItem) {
     const alert = await this.alertController.create({
       header: 'Eliminar Producto',

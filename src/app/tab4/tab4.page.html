@@ -10,7 +10,7 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <ion-fab vertical="top" horizontal="start" slot="fixed">
+  <ion-fab vertical="top" horizontal="start" slot="fixed" *ngIf="rol != 'admin'">
     <ion-fab-button  (click)="openCartPage()">
       <ion-icon name="cart-outline"></ion-icon>
     </ion-fab-button>

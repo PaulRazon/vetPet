@@ -7,4 +7,5 @@ export interface Cita{
     tipo?:string;
     observaciones?:string;
     email?:string;
+    status?:'pendiente'|'atendida'|'cancelada';
 }

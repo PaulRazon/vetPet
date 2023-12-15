@@ -23,7 +23,7 @@ export class Tab2Page implements OnInit{
     hora:'',
     tipo:'',
     observaciones:'',
-    email:''
+    email:'',
   }
 
   ngOnInit() {
@@ -68,6 +68,8 @@ export class Tab2Page implements OnInit{
       const cita = this.citaForm.value;
       this.citas.forEach(element => {
         cita.email = element.email;
+        cita.status = 'Pendiente';
+        console.log(element.email);
       })
       
       this.citaService.saveProduct(cita)

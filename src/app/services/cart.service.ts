@@ -7,15 +7,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
-
-  private cart: Cart = {
+  private cartHistorialCompras: Observable<Cart[]>;
+  public cartCollection:AngularFirestoreCollection<Cart>;
+  public pos = 0;
+  public cart: Cart = {
+    id: '',
     items: [],
     total: 0,
     itemCount: 0
   };
 
-  private cartHistorialCompras: Observable<Cart[]>;
-  private cartCollection:AngularFirestoreCollection<Cart>;
 
 
   constructor(private firestore: AngularFirestore) {
@@ -76,19 +77,16 @@ export class CartService {
     }
 
   }
-  buyProducts(cart:Cart):Promise<string>{
-    return this.cartCollection.add(cart)
-      .then((doc)=>{
-        console.log('Productos comprados' + doc.id);
-        this.cart = {
-          items: [],
-          total: 0,
-          itemCount: 0
-        };
-        return 'success'
+  buyProducts(cart: Cart): Promise<string> {
+    return this.cartCollection
+      .add(cart)
+      .then((doc) => {
+        console.log('Productos comprados con ID: ' + doc.id);
+        cart.id = doc.id;
+        return 'success'; // Retorna el carrito actualizado con el ID
       })
       .catch((error)=>{
-        console.log('error de:'+ error);
+        console.log('Error al añadir producto'+ error);
         return 'Error'
       });
   }

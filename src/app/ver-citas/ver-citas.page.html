@@ -19,42 +19,17 @@
             <td>Acciones</td>
           </tr>
           <hr>
-          <tr class="tarjeta">
-            <td>Perrito</td>
-            <td>01-01-2022</td>
-            <td>10:00</td>
-            <td>10:00</td>
-            <td><button class="atendida button">Atendida</button>
-            <button class="cancelar button">Cancelar</button></td>
-            
+          <tr class="tarjeta" *ngFor="let cita of citasFounds; index as i;">
+            <td>{{cita.name}}</td>
+            <td>{{cita.fecha}}</td>
+            <td>{{cita.hora}}</td>
+            <td>{{cita.status}}</td>
+            <td><button class="atendida button" (click)="validarCita(i)"*ngIf="cita.status === 'pendiente'">Atendida</button>
+            <button class="cancelar button" (click)="cancelarCita(i)" *ngIf="cita.status === 'pendiente'">Cancelar</button></td>
           </tr>
           <hr>
-          <tr class="tarjeta">
-            <td>Perrito</td>
-            <td>01-01-2022</td>
-            <td>10:00</td>
-            <td>10:00</td>
-            <td><button class="atendida button">Atendida</button>
-             <button class="cancelar button">Cancelar</button></td>
-          </tr>
-          <hr>
-          <hr>
-          <tr class="tarjeta">
-            <td>Perrito</td>
-            <td>01-01-2022</td>
-            <td>10:00</td>
-            <td>10:00</td>
-            <td><button class="atendida button">Atendida</button>
-             <button class="cancelar button">Cancelar</button></td>
-          </tr>
-          <hr>
-        </table>
-        <table>
-
         </table>
       </div>
     </div>
   </div>
-
-  
 </ion-content>

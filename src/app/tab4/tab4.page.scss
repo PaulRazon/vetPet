@@ -22,11 +22,16 @@ h3 {
   --placeholder-color: #FDFAC7;
   --color: #FDFAC7;
   --icon-color: #FDFAC7;
-  padding-top: 100px;
+  padding-bottom: 2vh;
+  width: 60vh;
+  border-radius: 15px;
 }
-
 ion-content {
   --ion-background-color: #3C5377;
+}
+
+ion-select {
+  border-radius: 15px;
 }
 
 ion-card-title{
@@ -35,18 +40,19 @@ ion-card-title{
 }
 
 .filter {
-  margin-bottom: 10px;
   z-index: 2;
+  color: #BAAB6A;
 }
 
 .maincontainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 20px;
-  max-width: 960px;
+  width: 180vh;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
 }
 
 .thecard {

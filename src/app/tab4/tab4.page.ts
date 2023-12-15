@@ -147,9 +147,13 @@ export class Tab4Page {
   }
 
   public addToCart(product: Product, i: number) {
-    product.photo = product.photo + i;
-    this.cartService.addToCart(product);
-    console.log(this.cartService.getCart());
+    this.authService.getUserLogin().subscribe((res) => {
+      if(res?.email){
+        product.photo = product.photo + i;
+        this.cartService.addToCart(product);
+        console.log(this.cartService.getCart());
+      }
+    })
   }
 
   openCartPage() {

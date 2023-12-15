@@ -11,6 +11,7 @@ export class CitaService {
   private cita:Observable<Cita[]>;
   public emailOnline:string="";
   public citaCollection:AngularFirestoreCollection<Cita>;
+  public pos = 0;
   public user:Cita={
     id:'',
     name:'',
@@ -19,7 +20,7 @@ export class CitaService {
     hora:'',
     tipo:'',
     observaciones:'',
-    email:''
+    email:'',
   }
   constructor(private firestore: AngularFirestore,private authService: AuthService) { 
     
@@ -31,9 +32,7 @@ export class CitaService {
       
     });
     this.citaCollection = this.firestore.collection<Cita>('cita');
-    
     this.cita = this.citaCollection.valueChanges();
-    
   }
   //Añadir
   saveProduct(citaUser: Cita): Promise<string> {
@@ -77,8 +76,13 @@ export class CitaService {
   }
   //OBTENER DE FIREBASE
   getDates(): Observable<Cita[]> {
-  
-  
     return this.firestore.collection<Cita>('cita', ref => ref.where('email', '==', this.user.email)).valueChanges();
+  }
+  getCitas(): Observable<Cita[]> {
+    return this.cita;
+  }
+  getDatesInfo<type>(path:string,id:string){
+    const collection = this.firestore.collection(path); 
+    return collection.doc<type>(id).valueChanges();
   }
 }

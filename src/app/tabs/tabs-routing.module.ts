@@ -30,6 +30,10 @@ const routes: Routes = [
         loadChildren: () => import('../ver-citas/ver-citas.module').then(m => m.VerCitasPageModule)
       },
       {
+        path: 'sales',
+        loadChildren: () => import('../sales/sales.module').then(m => m.SalesPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
