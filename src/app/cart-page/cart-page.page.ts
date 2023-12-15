@@ -4,6 +4,9 @@ import { AlertController, ToastController } from '@ionic/angular';
 import { Cart, CartItem } from '../models/product.model';
 import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal';
 import { environment } from 'src/environments/environment';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalsalePage } from '../modalsale/modalsale.page';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-cart-page',
@@ -17,7 +20,9 @@ export class CartPagePage implements OnInit {
   constructor(
     private cartService: CartService,
     private alertController: AlertController,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private modalService: NgbModal,
+    private spinner: NgxSpinnerService
   ) {
     this.cart = this.cartService.getCart();
   }
@@ -56,6 +61,7 @@ export class CartPagePage implements OnInit {
         layout: 'vertical',
       },
       onApprove: (data, actions) => {
+        this.spinner.show();
         console.log('onApprove - transaction was approved, but not authorized', data, actions);
         actions.order.get().then((details: any) => {
           console.log('onApprove - you can get full order details inside onApprove: ', details);
@@ -64,6 +70,12 @@ export class CartPagePage implements OnInit {
       },
       onClientAuthorization: (data) => {
         console.log('onClientAuthorization - inform your server about completed transaction', data);
+        console.log(data.purchase_units[0].items);
+        this.openModal(
+          data.purchase_units[0].items,
+          data.purchase_units[0].amount.value
+        );
+        this.spinner.hide();
         // Handle successful payment here
       },
       onCancel: (data, actions) => {
@@ -113,12 +125,6 @@ export class CartPagePage implements OnInit {
         console.log('ID del carrito después de la compra:', idDelCarrito);
   
         // Resto del código para mostrar el mensaje de éxito
-        const toast = await this.toastController.create({
-          message: 'Compra exitosa',
-          duration: 2000,
-          position: 'top',
-        });
-        toast.present();
       } else {
         console.log('La compra no se completó correctamente.');
       }
@@ -161,5 +167,11 @@ export class CartPagePage implements OnInit {
       ],
     });
     await alert.present();
+  }
+
+  openModal(items: any[], amount: any): void {
+    const modalRef = this.modalService.open(ModalsalePage);
+    modalRef.componentInstance.items = items;
+    modalRef.componentInstance.amount = amount;
   }
 }

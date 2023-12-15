@@ -9,6 +9,7 @@ import { CartPagePageRoutingModule } from './cart-page-routing.module';
 
 import { CartPagePage } from './cart-page.page';
 import { ToolbarModule } from "../toolbar/toolbar.module";
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
     declarations: [CartPagePage],
@@ -18,7 +19,8 @@ import { ToolbarModule } from "../toolbar/toolbar.module";
         IonicModule,
         CartPagePageRoutingModule,
         ToolbarModule,
-        NgxPayPalModule
+        NgxPayPalModule,
+        NgxSpinnerModule
     ]
 })
 export class CartPagePageModule {}
